@@ -1,0 +1,1 @@
+/vagrant/sites/sfproject.dev/app/views/products/edit.blade.php
