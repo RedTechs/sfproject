@@ -15,6 +15,9 @@ class CreateAccountsTable extends Migration {
 		Schema::create('accounts', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('customer');
+			$table->decimal('phone', 7);
+			$table->string('email');
 			$table->timestamps();
 		});
 	}
