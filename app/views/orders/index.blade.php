@@ -1,0 +1,117 @@
+ @extends('layouts.master')
+
+ @section('content')
+
+ <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <style type="text/css">
+		  	.selectorform{
+		    	padding-top:60px;
+		    }
+		</style>
+        <script>
+            function BeersController($scope) {
+                $scope.brands = {
+                    'Shiner': {
+                        'Bock': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'White Wing': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Light Blonde': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Prickly Pear': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Premium': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Black Lager': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Strawberry Blonde': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Kosmos': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Octoberfest': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Holiday Cheer': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Wicked Ram IPA': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg']
+                    },
+                    'Lone Star': {
+                      'Original': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                      'Light': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg']
+                    },
+                    'Lagunitas': {
+                        'IPA': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Sumpin Sumpin Ale': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Daytime IPA': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Pils': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Brown Shugga Ale': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Maximus IPA': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Dogtown Pale Ale': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Imperial Stout': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Censored Copper Ale': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg'],
+                        'Hop Stoopid Ale': ['6-Pack Can', '12-Pack Can', '24-Pack Can', '6-Pack Bottle', '24-Pack Bottle', '1/4-Bubble Keg', '1/2-Bubble Keg']
+                    },
+                }   
+
+                $scope.items = [];
+                $scope.newItem = {
+                  quantity: 1
+                }; 
+
+                $scope.addItem = function(){
+                  $scope.items.push($scope.newItem);
+                  $scope.newItem = {
+                    quantity: 1
+                  };
+                };
+
+                $scope.getSubTotal = function(){
+                  var subTotal = 0;
+                  for(var i = 0; i < $scope.items.length; i++){
+                    subTotal += $scope.items[i].quantity * $scope.items[i].price; 
+                  }
+                  return subTotal;
+                }
+
+                $scope.getShipping = function(){
+                  var shipping = 0; 
+                  for(var i = 0; i < $scope.items.length; i++){
+                    shipping += $scope.items[i].quantity * 1.25; 
+                  }
+                  return shipping;
+
+                }
+
+                $scope.removeItem = function($index){
+                  $scope.items.splice($index, 1);
+                }
+            }
+        </script>
+        </head>
+      
+        <div ng-app class="container selectorform">
+          <div ng-controller="BeersController">
+          <form novalidate name="addForm" ng-submit="addItem()">
+            <div class="form-group">
+              <label class="control-label" for="Brand">Brand:</label>
+              <select class="form-control input-lg" id="brand" ng-model="beers" ng-options="brand for (brand, beers) in brands">
+                <option value=''>Select</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Beers">Beers:</label>
+              <select class="form-control input-lg" id="beer" ng-disabled="!beers" ng-model="bottles" ng-options="beer for (beer, bottle) in beers">
+                <option value=''>Select</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Bottle">Bottle:</label>
+              <select class="form-control input-lg" id="bottle" ng-disabled="!bottles || !beers" ng-model="bottle" ng-options="bottle for bottle in bottles">
+                <option value=''>Select</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" id="quantity" ng-model="newItem.quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                $<input type="number" name="currency" min="0" max="99999999999" step="0.01" size="4" ng-model="newItem.price" required>
+            </div>
+            <button class="btn btn-primary" type="submit" ng-if="addForm.$valid">Add Item</button>
+          </div>
+        </form>
+        </div>
+      </div>
+
