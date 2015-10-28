@@ -15,3 +15,11 @@ Route::get('/', function()
 {
 	return View::make('home');
 });
+
+Route::resource('orders', 'OrdersController');
+
+Route::resource('users', 'UsersController');
+
+Route::resource('accounts', 'AccountsController');
+
+Route::resource('products', 'ProductsController');

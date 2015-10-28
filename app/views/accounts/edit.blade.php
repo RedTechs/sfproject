@@ -1,1 +1,12 @@
-/vagrant/sites/sfproject.dev/app/views/accounts/edit.blade.php
+@extends('layouts.master')
+
+@section('content')
+
+<script type="text/csss">
+	// all my awesome css
+</script>
+<div>
+	{{-- create index for accounts --}}
+</div>
+
+@stop
