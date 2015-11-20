@@ -7,7 +7,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"way/generators": "~2.0",
-		"twbs/bootstrap": "^3.3"
+		"twbs/bootstrap": "^3.3",
+		"davispeixoto/laravel-salesforce": "2.0.*"
 	},
 	"autoload": {
 		"classmap": [
