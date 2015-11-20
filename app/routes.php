@@ -23,3 +23,12 @@ Route::resource('users', 'UsersController');
 Route::resource('accounts', 'AccountsController');
 
 Route::resource('products', 'ProductsController');
+
+Route::get('/test', function() {
+        try {
+            print_r(Salesforce::describeLayout('Account'));
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            die($e->getMessage() . $e->getTraceAsString());
+        }
+    });
