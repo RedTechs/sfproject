@@ -1,18 +1,15 @@
-
-
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
-
 <meta charset="utf-8">
 <title>Standard Data Input Template</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1,	minimum-scale=1, maximum-scale=1">
-<link rel="stylesheet" href="../common/css/app.min.css">
-<script src="../common/js/jQuery2.0.2.min.js"></script>
-<script src="../common/js/zebra_datepicker.min.js"></script>
-<script src="../common/js/jquery.nouislider.min.js"></script>
-<script src="../common/js/main.min.js"></script>
+<link rel="stylesheet" href="/css/app.min.css">
+<script src="/js/jQuery2.0.2.min.js"></script>
+<script src="/js/zebra_datepicker.min.js"></script>
+<script src="/js/jquery.nouislider.min.js"></script>
+<script src="/js/main.min.js"></script>
 
 </head>
 
@@ -29,7 +26,7 @@
 <header>
 <div class="main-menu-button main-menu-button-left"><a class="left-arrow">&nbsp;</a></div>
 <div class="main-menu-button main-menu-button-right"><a class="gear">&nbsp;</a></div>
-<h1>Inspection</h1>
+<h1>testing</h1>
 </header>
 
 <div class="app-content">
@@ -38,7 +35,7 @@
 
 <section class="border-bottom">
 	<div class="content">
-		<h3>Hotel Name</h3>
+		<h3>BEER</h3>
 		<div class="form-control-group">
 			<div class="form-control form-control-text">
 				<input type="text" name="text">
@@ -49,7 +46,7 @@
 
 <section class="border-bottom">
 	<div class="content">
-		<h3>Inspection Date</h3>
+		<h3>Order Date</h3>
 		<div class="form-control-group">
 			<div class="form-control form-control-date">
 				<input type="date" name="date">
@@ -60,7 +57,7 @@
 
 <section class="border-bottom">
 	<div class="content">
-		<h3>Passed</h3>
+		<h3>Include marketing tools</h3>
 		<div class="form-control-group">
 			<div class="form-control form-control-toggle" data-on-label="yes" data-off-label="no">
 				<input type="checkbox" name="toggle">
@@ -82,7 +79,7 @@
 
 <section class="border-bottom">
 	<div class="content">
-		<h3>Room Types</h3>
+		<h3>Container type</h3>
 		<div class="span-50 form-control-group">
 			<div class="form-control form-control-checkbox">
 			<input type="checkbox"><label>Single</label>
@@ -93,7 +90,7 @@
 		</div>
 		<div class="span-50 form-control-group">
 			<div class="form-control form-control-checkbox">
-			<input type="checkbox"><label>Suite</label>
+			<input type="checkbox"><label>triple</label>
 			</div>
 		</div>
 	</div><!--.content-->
@@ -137,4 +134,4 @@
 </div><!--#app-wrapper-->
 
 </body>
-</html>
+</html

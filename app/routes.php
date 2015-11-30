@@ -26,7 +26,10 @@ Route::resource('products', 'ProductsController');
 
 Route::get('/test', function() {
         try {
-            print_r(Salesforce::describeLayout('Account'));
+        	$account = Salesforce::describeLayout('Account');
+            // print_r(Salesforce::describeLayout('Account'));
+            return View::make('home')->with('account', $account);
+            // return View::make('accounts.index', compact('accounts'));
         } catch (Exception $e) {
             Log::error($e->getMessage());
             die($e->getMessage() . $e->getTraceAsString());
